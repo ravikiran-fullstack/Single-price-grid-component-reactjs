@@ -1,13 +1,161 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+:root{
+  --cyan: hsl(179, 62%, 43%);
+  --light-cyan: hsl(179deg 92% 41%);
+  --bright-yellow: hsl(71, 73%, 54%);
+
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+#root {
+  font-family: 'Karla', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-gray);
+  font-size: 100%;
+  color: white;
+}
+
+.container {
+  width: 45%;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 25vh 32vh;
+}
+
+.gridItem1 {
+  /* min-width: 50vw;
+  min-height: 50vh; */
+  background-color: white;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.gridItem2 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  background-color: var(--cyan);
+  border-bottom-left-radius: 10px;
+}
+
+.gridItem3 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  background-color: var(--light-cyan);
+  border-bottom-right-radius: 10px;
+}
+
+.card1, .card2, .card3{
+  padding-left:30px;
+  padding-right:30px;
+  padding-top: 30px;
+  height: 100%;
+  text-align: left;
+}
+
+.card1{
+  color: var(--grayish-blue);
+}
+
+.pageHeading1{
+  color: var(--cyan);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.offerHeading{
+  color: var(--bright-yellow);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.offerInfo{
+  font-size: 0.8rem;
+  color: var(--grayish-blue) !important;
+}
+
+.subscriptionHeading{
+  font-weight: 700;
+}
+
+.subscriptionPrice{
+  font-size: 2rem;
+  color: white;
+}
+
+.subscriptionText{
+  color: var(--light-cyan);
+}
+
+.subscriptionInfo{
+  font-size: 0.8rem;
+  color: var(--light-gray);
+}
+
+.signUpButton{
+  background-color: var(--bright-yellow);
+  width: 100%;
+  height: 40px;
+  margin-top: 10px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  /* box-shadow: 2px 4px 11px 0px #cfcfcf; */
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  font-size: 0.8rem;
+  color: var(--light-gray);  
+}
+
+@media (max-width: 1080px) {
+  .container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
+  }
+  .gridContainer {
+    display: grid;
+    grid-template-rows: 30vh 30vh 30vh;
+    grid-template-columns: none !important;
+  }
+
+  .gridItem1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .gridItem2 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    border-bottom-left-radius: 0px !important;
+  }
+
+  .gridItem3 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    border-bottom-left-radius: 10px;
+  }
+
+  .signUpButton{
+    margin-top: 20px !important;
+  }
 }
